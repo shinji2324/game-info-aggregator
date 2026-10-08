@@ -1,0 +1,11 @@
+package io.github.shinji2324.infra.logger
+
+internal object LoggerMessageFormatter {
+    fun format(message: String): String {
+        var index = 0
+
+        return message.replace(Regex("""\{\}""")) {
+            "{${index++}}"
+        }
+    }
+}
